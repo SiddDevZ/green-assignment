@@ -26,7 +26,7 @@ export default function ProductPage({ params }) {
     return (
       <div className="container mx-auto px-6 py-16 text-center">
         <h1 className="text-2xl font-serif mb-6">Product Not Found</h1>
-        <p className="mb-8">Sorry, we couldn't find the product you're looking for.</p>
+        <p className="mb-8">Sorry, we couldn&apos;t find the product you&apos;re looking for.</p>
         <Link href="/collections" className="bg-[#2c3a2a] text-white px-8 py-3 rounded-md hover:bg-[#3c4a3a] transition-colors">
           Back to Collections
         </Link>

@@ -41,10 +41,10 @@ export default function StoryPage() {
                   Green Slumber began in 2015 when our founder, Emma Clarke, discovered the environmental impact of conventional bedding production while renovating her home.
                 </p>
                 <p className="text-lg leading-relaxed text-[#4a5a47] mb-6">
-                  Shocked by the chemicals, water waste, and carbon footprint involved in traditional textile manufacturing, Emma set out to find truly sustainable alternatives that didn't compromise on luxury or comfort.
+                  Shocked by the chemicals, water waste, and carbon footprint involved in traditional textile manufacturing, Emma set out to find truly sustainable alternatives that didn&apos;t compromise on luxury or comfort.
                 </p>
                 <p className="text-lg leading-relaxed text-[#4a5a47]">
-                  When she couldn't find what she was looking for, she decided to create it herself—partnering with sustainable farmers, ethical manufacturers, and textile experts who shared her vision.
+                  When she couldn&apos;t find what she was looking for, she decided to create it herself—partnering with sustainable farmers, ethical manufacturers, and textile experts who shared her vision.
                 </p>
               </div>
               <div className="relative h-[400px]">
@@ -99,8 +99,8 @@ export default function StoryPage() {
                 </svg>
               </div>
               <h3 className="font-serif text-xl font-medium text-[#2c3a2a] mb-4">Sustainability First</h3>
-              <p className="text-[#4a5a47] leading-relaxed">
-                Every decision we make considers environmental impact, from the materials we use to our packaging and shipping methods. We're committed to reducing our footprint at every step.
+              <p className="text-[#4a5a47] leading-relaxed mb-6">
+                Every decision we make considers environmental impact, from the materials we use to our packaging and shipping methods. We&apos;re committed to reducing our footprint at every step.
               </p>
             </div>
             
@@ -150,7 +150,7 @@ export default function StoryPage() {
                 We use only organic cotton (GOTS certified), sustainable eucalyptus and bamboo fibers (OEKO-TEX® certified), and European flax linen grown without pesticides or excessive water use.
               </p>
               <p className="text-[#4a5a47] leading-relaxed">
-                Our wool products use ethically sourced alpaca and sheep's wool from farms that prioritize animal welfare and sustainable land management.
+                Our wool products use ethically sourced alpaca and sheep&apos;s wool from farms that prioritize animal welfare and sustainable land management.
               </p>
             </div>
             

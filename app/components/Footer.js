@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <h3 className="text-xl font-serif mb-6">Eco Luxe Living</h3>
             <p className="text-[#d1dbc9] text-sm leading-relaxed">
-              Luxury sustainable living products that don't compromise on quality or style.
+              Luxury sustainable living products that don&apos;t compromise on quality or style.
             </p>
           </div>
 
