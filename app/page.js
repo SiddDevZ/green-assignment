@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -27,12 +28,16 @@ export default function Home() {
             Crafted from sustainable materials to bring you perfect comfort while preserving our planet
           </p> */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#e8ede4] text-[#2c3a2a] px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-[#d1dbc9] transition-all duration-300">
-              Discover Collection
-            </button>
-            <button className="bg-transparent border-2 border-white text-white px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-white/10 transition-all duration-300">
-              Our Story
-            </button>
+            <Link href="/collections">
+              <button className="bg-[#e8ede4] text-[#2c3a2a] px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-[#d1dbc9] transition-all duration-300">
+                Discover Collection
+              </button>
+            </Link>
+            <Link href="/story">
+              <button className="bg-transparent border-2 border-white text-white px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-white/10 transition-all duration-300">
+                Our Story
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -106,7 +111,14 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-xl font-medium text-[#2c3a2a] mb-3">Organic Cotton Sheet Set</h3>
               <p className="text-[#4a5a47] mb-4">Luxuriously soft, GOTS-certified organic cotton for your most restful sleep.</p>
-              <p className="text-[#2c3a2a] font-medium">From $129</p>
+              <div className="flex justify-between items-center">
+                <p className="text-[#2c3a2a] font-medium">From $129</p>
+                <Link href="/collections/organic-cotton-sheet-set">
+                  <button className="text-sm text-[#2c3a2a] font-medium border-b border-[#2c3a2a] hover:border-transparent transition-all">
+                    View Details
+                  </button>
+                </Link>
+              </div>
             </div>
             
             {/* Product 2 */}
@@ -122,7 +134,14 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-xl font-medium text-[#2c3a2a] mb-3">Bamboo Duvet Cover</h3>
               <p className="text-[#4a5a47] mb-4">Temperature-regulating bamboo fabric for year-round comfort and elegance.</p>
-              <p className="text-[#2c3a2a] font-medium">From $189</p>
+              <div className="flex justify-between items-center">
+                <p className="text-[#2c3a2a] font-medium">From $189</p>
+                <Link href="/collections/bamboo-duvet-cover">
+                  <button className="text-sm text-[#2c3a2a] font-medium border-b border-[#2c3a2a] hover:border-transparent transition-all">
+                    View Details
+                  </button>
+                </Link>
+              </div>
             </div>
             
             {/* Product 3 */}
@@ -138,14 +157,23 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-xl font-medium text-[#2c3a2a] mb-3">Stone-Washed Linen Pillowcases</h3>
               <p className="text-[#4a5a47] mb-4">Breathable, durable linen that gets softer with every wash.</p>
-              <p className="text-[#2c3a2a] font-medium">From $79</p>
+              <div className="flex justify-between items-center">
+                <p className="text-[#2c3a2a] font-medium">From $79</p>
+                <Link href="/collections/linen-pillowcases">
+                  <button className="text-sm text-[#2c3a2a] font-medium border-b border-[#2c3a2a] hover:border-transparent transition-all">
+                    View Details
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
           
           <div className="text-center mt-16">
-            <button className="border-2 border-[#2c3a2a] text-[#2c3a2a] px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-[#2c3a2a] hover:text-white transition-all duration-300">
-              View All Products
-            </button>
+            <Link href="/collections">
+              <button className="border-2 border-[#2c3a2a] text-[#2c3a2a] px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-[#2c3a2a] hover:text-white transition-all duration-300">
+                View All Products
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -323,9 +351,9 @@ export default function Home() {
             <div>
               <h4 className="font-serif text-xl mb-6">Navigation</h4>
               <ul className="space-y-3">
-                <li><a href="/" className="text-white/80 hover:text-white transition-colors">Home</a></li>
-                <li><a href="/collections" className="text-white/80 hover:text-white transition-colors">Collections</a></li>
-                <li><a href="/story" className="text-white/80 hover:text-white transition-colors">Our Story</a></li>
+                <li><Link href="/" className="text-white/80 hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/collections" className="text-white/80 hover:text-white transition-colors">Collections</Link></li>
+                <li><Link href="/story" className="text-white/80 hover:text-white transition-colors">Our Story</Link></li>
               </ul>
             </div>
             
