@@ -212,7 +212,6 @@ export default function ProductPage() {
   const { productId } = useParams();
   const product = products.find(p => p.id === productId);
   
-  const [mainImage, setMainImage] = useState(product?.image || '');
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
   const [quantity, setQuantity] = useState(1);
@@ -261,41 +260,25 @@ Your order has been confirmed.`);
         {/* Breadcrumb */}
         <div className="mb-10">
           <div className="flex items-center space-x-2 text-sm text-[#4a5a47]">
-            <Link href="/" className="hover:text-[#2c3a2a]">Home</Link>
+            <Link href="/" className="hover:text-[#2c3a2a] cursor-pointer">Home</Link>
             <span>/</span>
-            <Link href="/collections" className="hover:text-[#2c3a2a]">Collections</Link>
+            <Link href="/collections" className="hover:text-[#2c3a2a] cursor-pointer">Collections</Link>
             <span>/</span>
             <span className="text-[#2c3a2a]">{product.name}</span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Product Images */}
+          {/* Product Image */}
           <div>
             <div className="relative h-[500px] mb-4 bg-white">
               <Image 
-                src={mainImage}
+                src={product.image}
                 alt={product.name}
                 fill
                 style={{ objectFit: 'cover' }}
                 className="bg-white"
               />
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              {product.gallery.map((img, index) => (
-                <button 
-                  key={index}
-                  className={`relative h-24 bg-white border-2 ${mainImage === img ? 'border-[#2c3a2a]' : 'border-transparent'}`}
-                  onClick={() => setMainImage(img)}
-                >
-                  <Image 
-                    src={img}
-                    alt={`${product.name} view ${index + 1}`}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                </button>
-              ))}
             </div>
           </div>
 
@@ -314,7 +297,7 @@ Your order has been confirmed.`);
                     {product.variants.size.map((size) => (
                       <button 
                         key={size}
-                        className={`px-4 py-2 border ${selectedSize === size ? 'bg-[#2c3a2a] text-white border-[#2c3a2a]' : 'border-[#d1dbc9] text-[#4a5a47] hover:border-[#2c3a2a]'}`}
+                        className={`px-4 py-2 border cursor-pointer ${selectedSize === size ? 'bg-[#2c3a2a] text-white border-[#2c3a2a]' : 'border-[#d1dbc9] text-[#4a5a47] hover:border-[#2c3a2a]'}`}
                         onClick={() => setSelectedSize(size)}
                       >
                         {size}
@@ -332,7 +315,7 @@ Your order has been confirmed.`);
                     {product.variants.color.map((color) => (
                       <button 
                         key={color}
-                        className={`px-4 py-2 border ${selectedColor === color ? 'bg-[#2c3a2a] text-white border-[#2c3a2a]' : 'border-[#d1dbc9] text-[#4a5a47] hover:border-[#2c3a2a]'}`}
+                        className={`px-4 py-2 border cursor-pointer ${selectedColor === color ? 'bg-[#2c3a2a] text-white border-[#2c3a2a]' : 'border-[#d1dbc9] text-[#4a5a47] hover:border-[#2c3a2a]'}`}
                         onClick={() => setSelectedColor(color)}
                       >
                         {color}
@@ -347,7 +330,7 @@ Your order has been confirmed.`);
                 <h3 className="font-medium text-[#2c3a2a] mb-3">Quantity</h3>
                 <div className="flex border border-[#d1dbc9] w-32">
                   <button 
-                    className="px-3 py-2 bg-[#e8ede4] text-[#2c3a2a]"
+                    className="px-3 py-2 bg-[#e8ede4] text-[#2c3a2a] cursor-pointer"
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   >
                     -
@@ -360,7 +343,7 @@ Your order has been confirmed.`);
                     className="w-full text-center border-0 focus:ring-0 bg-transparent text-[#2c3a2a] font-medium"
                   />
                   <button 
-                    className="px-3 py-2 bg-[#e8ede4] text-[#2c3a2a]"
+                    className="px-3 py-2 bg-[#e8ede4] text-[#2c3a2a] cursor-pointer"
                     onClick={() => setQuantity(quantity + 1)}
                   >
                     +
@@ -371,7 +354,7 @@ Your order has been confirmed.`);
             
             {/* Add to Cart / Buy Now Button */}
             <button 
-              className="w-full bg-[#2c3a2a] text-white py-4 text-sm uppercase tracking-widest font-medium hover:bg-[#4a5a47] transition-all duration-300 mb-6"
+              className="w-full bg-[#2c3a2a] text-white py-4 text-sm uppercase tracking-widest font-medium hover:bg-[#4a5a47] transition-all duration-300 mb-6 cursor-pointer"
               onClick={handlePurchase}
             >
               Add to Cart
@@ -413,7 +396,7 @@ Your order has been confirmed.`);
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.filter(p => p.id !== productId).slice(0, 4).map((relatedProduct) => (
               <div key={relatedProduct.id} className="group">
-                <Link href={`/collections/${relatedProduct.id}`}>
+                <Link href={`/collections/${relatedProduct.id}`} className="cursor-pointer">
                   <div className="relative h-64 mb-4 overflow-hidden bg-[#f2f5f0]">
                     <Image 
                       src={relatedProduct.image}

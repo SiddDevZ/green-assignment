@@ -137,7 +137,7 @@ export default function CollectionsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
               <div key={product.id} className="bg-white p-6 group hover:shadow-lg transition-all duration-300">
-                <Link href={`/collections/${product.id}`}>
+                <Link href={`/collections/${product.id}`} className="cursor-pointer">
                   <div className="relative h-80 mb-6 overflow-hidden">
                     <Image 
                       src={product.image}
@@ -151,7 +151,7 @@ export default function CollectionsPage() {
                   <p className="text-[#4a5a47] mb-4">{product.description}</p>
                   <div className="flex justify-between items-center">
                     <p className="text-[#2c3a2a] font-medium">{product.price}</p>
-                    <span className="text-sm text-[#2c3a2a] font-medium border-b border-[#2c3a2a] group-hover:border-transparent transition-all">
+                    <span className="text-sm text-[#2c3a2a] font-medium border-b border-[#2c3a2a] group-hover:border-transparent transition-all cursor-pointer">
                       View Details
                     </span>
                   </div>
@@ -173,7 +173,7 @@ export default function CollectionsPage() {
             ethical manufacturing practices, and uncompromising quality.
           </p>
           <Link href="/story">
-            <button className="bg-[#2c3a2a] text-white px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-[#4a5a47] transition-all duration-300">
+            <button className="bg-[#2c3a2a] text-white px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-[#4a5a47] transition-all duration-300 cursor-pointer">
               Learn About Our Mission
             </button>
           </Link>
