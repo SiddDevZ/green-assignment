@@ -1,26 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f2f5f0;
+  --foreground: #2c3a2a;
+  --accent-light: #e8ede4;
+  --accent-dark: #4a5a47;
+  --text-light: #f8faf6;
+  --text-dark: #2c3a2a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-cormorant);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a221a;
+    --foreground: #e8ede4;
+    --accent-light: #4a5a47;
+    --accent-dark: #d1dbc9;
+    --text-light: #f8faf6;
+    --text-dark: #2c3a2a;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
